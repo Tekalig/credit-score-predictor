@@ -23,3 +23,13 @@ def detect_missing_values(data):
     pd.Series: A series containing the number of missing values in each column.
     """
     return data.isnull().sum()
+
+def save_data(data, file_path):
+    """
+    Save a dataset to a CSV file.
+
+    Args:
+    data (pd.DataFrame): The dataset to save.
+    file_path (str): The path to the output CSV file.
+    """
+    data.to_csv(file_path, index=False)
